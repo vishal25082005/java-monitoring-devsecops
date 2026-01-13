@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Monitoring</title>
+</head>
+<body>
+<h2>System Metrics</h2>
+<pre id="data">Loading...</pre>
+
+<script>
+fetch('/api/metrics')
+.then(res => res.json())
+.then(data => {
+    document.getElementById("data").innerText =
+        JSON.stringify(data, null, 2);
+});
+</script>
+</body>
+</html>
+
